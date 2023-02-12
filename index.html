@@ -19,22 +19,23 @@
 </head>
 
 <body>
-  <section id="landing-page">
+  <section id="landing-page" onmousemove="moveBackground(event)">
     <nav>
       <figure>
-        <img id="personal-logo" src="./assets/logo for light mode1.png" alt="" />
+        <img id="personal-logo" src="./assets/logo for dark mode.png" alt="Logo" />
       </figure>
       <ul class="nav__link--list">
         <li class="nav__link">
-          <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">About</a>
+          <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black"
+            onclick="toggleModal()">About</a>
         </li>
         <li class="nav__link">
-          <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Projects</a>
+          <a href="#projects" class="nav__link--anchor link__hover-effect link__hover-effect--black">Projects</a>
         </li>
-        <li class="nav__link">
+        <li class="nav__link" onclick="toggleModal()">
           <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Contact</a>
         </li>
-        <li class="nav__link click">
+        <li class="nav__link click" onclick="toggleContrast()">
           <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black"><i
               class="fas fa-adjust"></i></a>
         </li>
@@ -44,13 +45,13 @@
       <div class="header__content">
         <h1 class="title">Hola!</h1>
         <h1 class="title purple">I'm Alejandro</h1>
-        <p class="header--para">
+        <p class="header__para">
           I'm an energized
           <b class="purple">Frontend Software Engineer</b> with a drive for
           crafting top-notch web experiences, ready to make an impact on your
           team!
           <br />
-          Here's a bit more <b class="purple">about me.</b>
+          Here's a bit more <b class="purple click" onclick="toggleModal()">about me.</b>
         </p>
         <div class="social__list">
           <a href="https://www.linkedin.com/in/ale-zarate-/" target="_blank" class="social__link click">
@@ -65,9 +66,11 @@
         </div>
       </div>
     </header>
-    <button class="mail__btn click">
-      <i class="fas fa-envelope"></i>
-    </button>
+    <a href="#">
+      <button class="mail__btn click" onclick="toggleModal()">
+        <i class="fas fa-envelope"></i>
+      </button>
+    </a>
     <a href="#projects" class="scroll">
       <div class="scroll__icon click"></div>
     </a>
@@ -110,9 +113,13 @@
         </div>
       </div>
       <div class="modal__half modal__contact">
-        <h3 class="modal__title modal__title--contact">Hey, let's have a chat!
+        <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+        <h3 class="modal__title modal__title--contact">
+          Hey, let's have a chat!
         </h3>
-        <h4 class="modal__sub-title modal__sub-title--contact">I would love to hear from you.</h4>
+        <h4 class="modal__sub-title modal__sub-title--contact">
+          I would love to hear from you.
+        </h4>
         <form id="contact__form" onsubmit="contact(event)">
           <div class="form__item">
             <label class="form__item">Name</label>
@@ -120,7 +127,7 @@
           </div>
           <div class="form__item">
             <label class="form__item">Email</label>
-            <input class="input" name="user_email" type="text" required></input>
+            <input class="input" name="user_email" type="email" required></input>
           </div>
           <div class="form__item">
             <label class="form__item">Message</label>
@@ -131,20 +138,26 @@
           </button>
         </form>
         <div class="modal__overlay modal__overlay--loading">
-          <div class="typewriter">
-            <div class="slide"><i></i></div>
-            <div class="paper"></div>
-            <div class="keyboard"></div>
-          </div>
+          <i class="fas fa-spinner"></i>
         </div>
         <div class="modal__overlay modal__overlay--success">
           Thank you. Can't wait to chat with you soon!
         </div>
-
-        <i class="fas fa-times modal__exit click"></i>
-
       </div>
     </div>
+
+
+
+    <img src="./assets/semi circle.svg" class="shape shape--0">
+    <img src="./assets/circle.svg" class="shape shape--1">
+    <img src="./assets/squiggly.svg" class="shape shape--2">
+    <img src="./assets/circle.svg" class="shape shape--3">
+    <img src="./assets/triangle.svg" class="shape shape--4">
+    <img src="./assets/circle.svg" class="shape shape--5">
+    <img src="./assets/squiggly.svg" class="shape shape--6">
+    <img src="./assets/circle.svg" class="shape shape--7">
+    <img src="./assets/semi circle.svg" class="shape shape--8">
+
   </section>
 
   <section id="projects">
@@ -243,25 +256,27 @@
           <img class="footer__logo--img" src="/assets/logo for dark mode.png" alt="">
         </figure>
         <div class="footer__social--list">
-          <a href="#" class="footer__social--link
+          <a href="https://github.com/Alezs7" target="_blank" class="footer__social--link
         link__hover-effect
         link__hover-effect--white
         ">
             Github
           </a>
-          <a href="#" class="footer__social--link
+
+          <a href="https://www.linkedin.com/in/ale-zarate-/" target="_blank" class="footer__social--link
         link__hover-effect
         link__hover-effect--white
         ">
             LinkedIn
           </a>
-          <a href="#" class="footer__social--link
+
+          <a href="#" onclick="toggleModal()" class="footer__social--link
         link__hover-effect
         link__hover-effect--white
         ">
             Contact
           </a>
-          <a href="#" class="footer__social--link
+          <a href="./assets/ALEJANDRO ZARATE CV.pdf" target="_blank" class="footer__social--link
         link__hover-effect
         link__hover-effect--white
         ">
